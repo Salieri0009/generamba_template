@@ -20,6 +20,6 @@ struct {{ module_info.name }}View: View {
 
 struct {{ module_info.name }}View_Previews: PreviewProvider {
     static var previews: some View {
-        {{ module_info.name }}View(model: {{ module_info.name }}ViewModel)
+        {{ module_info.name }}View(model: {{ module_info.name }}ViewModel())
     }
 }
