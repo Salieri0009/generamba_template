@@ -24,16 +24,12 @@ class {{ module_info.name }}ModuleConfiguratorTests: XCTestCase {
 
         //given
 	let output = {{ module_info.name }}MockModuleOutput()
-        let view = {{ module_info.name }}ModuleConfigurator(output: output)
-
-        //when
-        configurator.configureModuleForViewInput(viewInput: viewController)
+        let view = {{ module_info.name }}ModuleConfigurator().configure(output: output)
 
         //then
-        XCTAssertNotNil(view.model "{{ module_info.name }}ViewModel is nil after configuration")
-        XCTAssertTrue(view.model is {{ module_info.name }}ViewModel, "output is not {{ module_info.name }}ViewModel")
+        XCTAssertNotNil(view.model, "{{ module_info.name }}ViewModel is nil after configuration")
 
-        let presenter: {{ module_info.name }}Presenter = (view.model as? {{ module_info.name }}ViewModel).output as! {{ module_info.name }}Presenter
+        let presenter: {{ module_info.name }}Presenter = view.model.output as! {{ module_info.name }}Presenter
         XCTAssertNotNil(presenter.viewModel, "viewModel in {{ module_info.name }}Presenter is nil after configuration")
 
         let interactor: {{ module_info.name }}Interactor = presenter.interactor as! {{ module_info.name }}Interactor
