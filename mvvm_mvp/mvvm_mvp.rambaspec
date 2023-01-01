@@ -1,6 +1,6 @@
 # Template information section
 name: "mvvm_mvp"
-summary: "MVVM with presenter and interaction template with SwiftUI."
+summary: "MVVM with presenter and interaction template with SwiftUI"
 author: "Nikulin Maxim"
 version: "1.0"
 license: "MIT"
